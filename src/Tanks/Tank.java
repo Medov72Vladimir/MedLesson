@@ -56,6 +56,6 @@ public class Tank {
         System.out.printf("The Tank %s-%d is at %d, %d now.", name, k, coordinateX, coordinateY);
         System.out.println();
         System.out.println();
-        System.out.println("vmedov1");
+        System.out.println("med2");
     }
 }
