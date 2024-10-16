@@ -6,10 +6,10 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ChatServer {
-    ArrayList<Client> clients = new ArrayList<>();//список клиентов
+    ArrayList<Client> clients = new ArrayList<>();//СЃРїРёСЃРѕРє РєР»РёРµРЅС‚РѕРІ
     ServerSocket serverSocket;
-    ChatServer() throws IOException {//ненадежный конструктор
-        serverSocket = new ServerSocket(1234);// создаем серверный сокет на порту 1234
+    ChatServer() throws IOException {//РЅРµРЅР°РґРµР¶РЅС‹Р№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+        serverSocket = new ServerSocket(1234);// СЃРѕР·РґР°РµРј СЃРµСЂРІРµСЂРЅС‹Р№ СЃРѕРєРµС‚ РЅР° РїРѕСЂС‚Сѓ 1234
     }
     public void sendAll(String message){
         for (Client client : clients){
@@ -20,10 +20,10 @@ public class ChatServer {
         while(true) {
             System.out.println("Waiting...");
             try {
-                // ждем клиента из сети
+                // Р¶РґРµРј РєР»РёРµРЅС‚Р° РёР· СЃРµС‚Рё
                 Socket socket = serverSocket.accept();
                 System.out.println("Client connected!");
-                // создаем клиента на своей стороне
+                // СЃРѕР·РґР°РµРј РєР»РёРµРЅС‚Р° РЅР° СЃРІРѕРµР№ СЃС‚РѕСЂРѕРЅРµ
                 clients.add(new Client(socket, this));
             }catch (IOException e){
                 e.printStackTrace();

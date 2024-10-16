@@ -16,7 +16,7 @@ class Client implements Runnable {
     public Client(Socket socket, ChatServer server){
         this.socket = socket;
         this.server = server;
-        // запускаем поток
+        // Р·Р°РїСѓСЃРєР°РµРј РїРѕС‚РѕРє
         new Thread(this).start();
     }
 
@@ -25,16 +25,16 @@ class Client implements Runnable {
     }
     public void run() {
         try {
-            // получаем потоки ввода и вывода
+            // РїРѕР»СѓС‡Р°РµРј РїРѕС‚РѕРєРё РІРІРѕРґР° Рё РІС‹РІРѕРґР°
             InputStream is = socket.getInputStream();
             OutputStream os = socket.getOutputStream();
 
-            // создаем удобные средства ввода и вывода
+            // СЃРѕР·РґР°РµРј СѓРґРѕР±РЅС‹Рµ СЃСЂРµРґСЃС‚РІР° РІРІРѕРґР° Рё РІС‹РІРѕРґР°
             in = new Scanner(is);
             out = new PrintStream(os);
 
-            // читаем из сети и пишем в сеть
-            out.println("Добро пожаловать в чат!");
+            // С‡РёС‚Р°РµРј РёР· СЃРµС‚Рё Рё РїРёС€РµРј РІ СЃРµС‚СЊ
+            out.println("Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ С‡Р°С‚!");
             String input = in.nextLine();
             while (!input.equals("bye")) {
                server.sendAll(input);
